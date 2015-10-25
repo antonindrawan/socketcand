@@ -29,10 +29,10 @@ sysroot = @sysroot@
 all: socketcand socketcandcl
 
 socketcand: $(sourcefiles)
-	$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) $(LDFLAGS) -I . -I ./include -o $(executable) $(sourcefiles) $(LIBS)
+	$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) $(LDFLAGS) -I . -I $(srcdir)/include -o $(executable) $(sourcefiles) $(LIBS)
 
 socketcandcl: $(sourcefiles_cl)
-	$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) $(LDFLAGS) -I . -I ./include -o $(executable_cl) $(sourcefiles_cl)
+	$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) $(LDFLAGS) -I . -I $(srcdir)/include -o $(executable_cl) $(sourcefiles_cl)
 
 clean:
 	rm -f $(executable) $(executable_cl) *.o
