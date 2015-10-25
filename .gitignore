@@ -7,6 +7,5 @@ config.status
 autoscan.log
 autom4te.cache
 Makefile
-config.h
 init.d/socketcand
 debian_pack
