@@ -18,7 +18,10 @@ set(SOURCE_FILES
 )
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
-target_link_libraries(${PROJECT_NAME} pthread)
+
+if(LINUX)
+  target_link_libraries(${PROJECT_NAME} pthread)
+endif()
 
 set(SOCKETCAND_CLIENT_SOURCE_FILES
   socketcandcl.c
