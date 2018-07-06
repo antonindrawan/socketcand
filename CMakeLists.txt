@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 2.8.11)
 
 project(socketcand)
 
-if(ARM_LINUX)
+if(LINUX)
+  add_definitions(-DLINUX=1)
+elseif(ARM_LINUX)
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -static")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
   add_definitions(-DARM_LINUX=1)
